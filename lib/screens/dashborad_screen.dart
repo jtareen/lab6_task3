@@ -7,16 +7,16 @@ class LibraryDashboardScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Library Dashboard'),
-        elevation: 4.0, // Adds shadow below AppBar
+        elevation: 4.0,
         shadowColor: Colors.black54,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: GridView.builder(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, // Number of columns
-            crossAxisSpacing: 16.0, // Spacing between columns
-            mainAxisSpacing: 16.0, // Spacing between rows
+            crossAxisCount: 2,
+            crossAxisSpacing: 16.0,
+            mainAxisSpacing: 16.0,
           ),
           itemCount: libraryDashboardItems.length,
           itemBuilder: (context, index) {

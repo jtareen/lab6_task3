@@ -86,3 +86,22 @@ final List<Book> books = [
   Book(name: 'The Kite Runner', genre: 'Drama'),
   Book(name: 'Sapiens', genre: 'Non-fiction'),
 ];
+
+List<Book> getNewArrivals(List<Book> books) {
+  return books.where((book) => book.isNewArrival).toList();
+}
+
+List<Book> getIssuedBooks(List<Book> books) {
+  return books.where((book) => book.isIssued && book.dueDate != null).toList();
+}
+
+List<Book> getOverdueBooks(List<Book> books) {
+  return books
+      .where((book) =>
+  book.isIssued && book.dueDate != null && book.dueDate!.isBefore(DateTime.now()))
+      .toList();
+}
+
+List<Book> getAvailableBooks(List<Book> books) {
+  return books.where((book) => !book.isIssued).toList();
+}

@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:lab6_task3/models/books.dart';
 
-class NewArrivalsPage extends StatelessWidget {
+class AvailableBooksPage extends StatelessWidget {
   final List<Book> books;
 
-  NewArrivalsPage({required this.books});
+  AvailableBooksPage({required this.books});
 
   @override
   Widget build(BuildContext context) {
-    final newArrivals = getNewArrivals(books);
+    final availableBooks = getAvailableBooks(books);
 
     return Scaffold(
-      appBar: AppBar(title: Text('New Arrivals')),
+      appBar: AppBar(title: Text('Available Books')),
       body: ListView.builder(
-        itemCount: newArrivals.length,
+        itemCount: availableBooks.length,
         itemBuilder: (context, index) {
-          final book = newArrivals[index];
+          final book = availableBooks[index];
           return ListTile(
             title: Text(book.name),
             subtitle: Text(book.genre),

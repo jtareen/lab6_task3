@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:lab6_task3/models/books.dart';
+import 'package:lab6_task3/models/members.dart';
+import 'package:lab6_task3/screens/available_books_screen.dart';
+import 'package:lab6_task3/screens/issued_books.dart';
+import 'package:lab6_task3/screens/members_screen.dart';
+import 'package:lab6_task3/screens/newarrival_screen.dart';
+import 'package:lab6_task3/screens/overdue_books_screen.dart';
 import 'package:lab6_task3/screens/total_books_screen.dart';
 
 class DashboardItem {
@@ -35,7 +41,7 @@ final List<DashboardItem> libraryDashboardItems = [
     icon: Icons.person,
     color: Colors.green,
       onPressed: (context) {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => BookListPage(books: books)));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => MemberGridPage(members: members,)));
       }
   ),
   DashboardItem(
@@ -44,7 +50,7 @@ final List<DashboardItem> libraryDashboardItems = [
     icon: Icons.assignment,
     color: Colors.orange,
       onPressed: (context) {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => BookListPage(books: books)));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => IssuedBooksPage(books: books)));
       }
   ),
   DashboardItem(
@@ -53,7 +59,7 @@ final List<DashboardItem> libraryDashboardItems = [
     icon: Icons.library_books,
     color: Colors.purple,
       onPressed: (context) {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => BookListPage(books: books)));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => AvailableBooksPage(books: books)));
       }
   ),
   DashboardItem(
@@ -62,7 +68,7 @@ final List<DashboardItem> libraryDashboardItems = [
     icon: Icons.warning,
     color: Colors.red,
       onPressed: (context) {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => BookListPage(books: books)));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => OverdueBooksPage(books: books)));
       }
   ),
   DashboardItem(
@@ -71,7 +77,7 @@ final List<DashboardItem> libraryDashboardItems = [
     icon: Icons.new_releases,
     color: Colors.teal,
       onPressed: (context) {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => BookListPage(books: books)));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => NewArrivalsPage(books: books)));
       }
   ),
 ];
